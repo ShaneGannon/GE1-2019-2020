@@ -9,13 +9,11 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-<<<<<<< HEAD
         //StartCoroutine(ShootingCoroutine());
-=======
-        StartCoroutine(Shoot());
-    }
+        StartCo;
 
-    int fireRate = 2;
+    int fireRaroutine(Shoot());
+    }te = 2;
 
     IEnumerator Shoot()
     {
@@ -28,7 +26,7 @@ public class Shooting : MonoBehaviour
             }
             yield return null;
         }
->>>>>>> 502bb6c99876b4796d6457efe1e100495b98c282
+
     }
 
     public int fireRate = 3;
@@ -39,13 +37,11 @@ public class Shooting : MonoBehaviour
     //co-routines
     System.Collections.IEnumerator ShootingCoroutine()
     {
-<<<<<<< HEAD
+
         float toPass = 1.0f / fireRate;
         while (true)
-=======
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
->>>>>>> 502bb6c99876b4796d6457efe1e100495b98c282
         {
         GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             yield return new WaitForSeconds(toPass);
