@@ -10,10 +10,11 @@ public class Shooting : MonoBehaviour
     void OnEnable()
     {
         //StartCoroutine(ShootingCoroutine());
-        StartCo;
+        StartCoroutine(Shoot());
 
-    int fireRaroutine(Shoot());
-    }te = 2;
+    
+    }
+    int fireRate = 2;
 
     IEnumerator Shoot()
     {
@@ -28,13 +29,12 @@ public class Shooting : MonoBehaviour
         }
 
     }
-    public int fireRate = 3;
     //make public for debugging purposes
     public float ellapsed = float.MaxValue;
     //public int x = 0;
 
     //co-routines
-    System.Collections.IEnumerator ShootingCoroutine();
+    System.Collections.IEnumerator ShootingCoroutine { get; }
 
     Coroutine cr;
 
