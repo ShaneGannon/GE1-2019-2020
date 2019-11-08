@@ -40,9 +40,72 @@
 - Week 5 - CA proposal & Git repo - 10%
 - Week 13 - CA Submission & Demo - 40%
 
+## Week - Physics 2
+
+### Learning Outcomes
+- Know how to use raycasts, quaternions and vectors
+- Know how to use trigonometry and the unit circle
+- Know how to create physics objects from code
+- Know the different types of physics joints and what they are used for
+
+In todays lab you can try and make this:
+
+[![YouTube](http://img.youtube.com/vi/vDu28RoqPus/0.jpg)](http://www.youtube.com/watch?v=vDu28RoqPus)
+
+What is happening:
+
+- The camera is controlled using keyboard and mouse. 
+- When the player presses U, a tower will spawn in front of the player. To choose the position, you should raycast from the cameras position in the direction the camera is looking to hit the ground
+- When the player presses I, a rainbow caterpillar will spawn. I made a seperate script for spawning the caterpillar. Have fields for setting:
+    - The number of segments
+    - The size of each of the segments. I used a cube for each segment and set the localScale to change the size. I also calculated the gap between the segments relative to the size
+    - Parent the segments to the owning transform
+    - Dont forget to add a rigidbody to the segment
+    - Try and get the basic caterpillar working first and then you can refactor to add tapering at the front and back
+    - Use Color.HSVToRGB to set the colour of each segment
+    - Link the segments to each other with HingeJoints
+    - Add fields for spring and damper values. I used values of 100 and 50
+    - In update, use addTorque to add rotational force to the rigidBodies. Use a variable to control which segment get the torque and you can use another variable speed to control how fast the contraction moves along the creatures body
+
+Start with scene6
+Unity API's you can use in your solution:
+
+- GameObject.Instantiate
+- Quaternion.AngleAxis
+- Physics.Raycast
+- GameObject.CreatePrimitive
+- Color.HSVToRGB
+- RigidBody.AddTorque
+
+
+## Week 7 - Review Week
+
+## Week 6 - Physics 1
+## Lecture
+- [Physics 1](https://drive.google.com/open?id=1rYFVCwmL81sEUD-b-Nt-1lmMKw-4XDi0)
+- [Physics 2](https://drive.google.com/open?id=1ZGWsmDz9uIJEUf2HPBV2JyYxv1RswPar)
+- [Physics 3](https://drive.google.com/open?id=1Tncqb27Cg8LpqHqrtSfcZlgeqTo-HpE8)
+
+## Lab
+### Learning outcomes
+- Write a physics integration function from scratch
+- Use trigonometry
+- Make a path following AI
+
+Today lets use the [Seek steering behaviour](https://natureofcode.com/book/chapter-6-autonomous-agents/) as inspiration to make this little scenario:
+
+[![YouTube](http://img.youtube.com/vi/BuyQNxwLC9g/0.jpg)](http://www.youtube.com/watch?v=BuyQNxwLC9g)
+
+- Make a Path MonoBehaviour that has a public List of Vector3. Use trigonometry to create the elements of the vector. You can also add gizmos so that the path can be seen in the Unity editor. This class does not need an Update method. It is just a container for the waypoints
+- Make a PathFollower MonoBehaviour that has a public field for the path (that you can drag the Path onto) and another public field for the current waypoint. This class should have an Update method that steers the gameobject towards the current waypoint. When it gets close it should advance to the next
+- Make a prefab consisting of a Cube with a TrailRenderer attached. Attach the Pathfollower
+- Make a Spawner that spans the prefabs and assigns the path. You can offset the current waypoint for each one that you spawn
+
 ## Week 5 - Vectors & quaternions
 - [Slides on quaternions](https://drive.google.com/file/d/11-KFbodaAl9dRSs9ljzdDyTDp1QWWnsZ/view?usp=sharing)
 - [Vectors in Unity](https://docs.unity3d.com/Manual/UnderstandingVectorArithmetic.html)
+
+[![YouTube](http://img.youtube.com/vi/IXySkVFNhdk/0.jpg)](http://www.youtube.com/watch?v=IXySkVFNhdk)
 
 Quaternions in Unity:
 

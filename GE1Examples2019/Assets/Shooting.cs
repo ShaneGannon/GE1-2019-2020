@@ -29,6 +29,7 @@ public class Shooting : MonoBehaviour
 
     }
 
+<<<<<<< HEAD
     public int fireRate = 3;
     //make public for debugging purposes
     public float ellapsed = float.MaxValue;
@@ -36,6 +37,13 @@ public class Shooting : MonoBehaviour
 
     //co-routines
     System.Collections.IEnumerator ShootingCoroutine()
+=======
+
+    Coroutine cr;
+
+    // Update is called once per frame
+    void Update()
+>>>>>>> 0cc7fcf06f1fea02f05f0203fcde9dd1f0265f1e
     {
 
         float toPass = 1.0f / fireRate;
@@ -43,8 +51,13 @@ public class Shooting : MonoBehaviour
         /*
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+<<<<<<< HEAD
         GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             yield return new WaitForSeconds(toPass);
+=======
+            GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+            ellapsed = 0;
+>>>>>>> 0cc7fcf06f1fea02f05f0203fcde9dd1f0265f1e
         }
         */
     }
